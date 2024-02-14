@@ -29,16 +29,178 @@
 /* Styles */
 
 body {
+  height: 100vh;
   background-color: var(--Very-dark-blue);
   /* card titles 18px */
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
+  height: 500px;
   width: 100%;
+  display: grid;
+  grid-template-columns: 255px 255px 255px 255px;
+  grid-template-rows: auto;
+  /* grid-template-areas:
+    "person"
+    "person"; */
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
+  gap: 24px;
+  padding: 0 60px;
 }
 
-/* background color cards */
+/* person stylres */
+.container_person {
+  /* grid-area: person; */
+  grid-row: span 2;
+  background-color: var(--Dark-blue);
+  height: 500px;
+  border-radius: 20px;
+}
+
+.container_person-1 {
+  background-color: var(--Blue);
+  border-radius: 20px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 28px;
+  gap: 30px;
+}
+
+.container_person-1 .container_person--photo {
+  background-color: #fff;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.container_person-1 .container_person--photo img {
+  height: 90%;
+}
+
+.container_person-1 .container_person--name p:first-child {
+  color: var(--Pale-Blue);
+  font-size: 16px;
+}
+
+.container_person-1 .container_person--name p:last-child {
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.container_person-options {
+  height: 140px;
+  color: var(--Pale-Blue);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 28px;
+  font-size: 18px;
+}
+
+.container_person-options span {
+  width: fit-content;
+}
+
+.container_person-options span:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.container_info--data:hover {
+  background-color: var(--Desaturated-blue);
+  cursor: pointer;
+}
+
+/* cards style */
+
+/* cards general styles */
+.container_info {
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container_section {
+  height: 80px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container_section img {
+  position: absolute;
+  right: 20px;
+}
+
+.container_info--data {
+  height: 100%;
+  width: 100%;
+  background-color: var(--Dark-blue);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  position: absolute;
+  top: 42px;
+  padding: 30px 30px;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-container .data-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.data-header h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.data-header img:hover {
+  cursor: pointer;
+}
+
+.data-container .data-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0 0 0;
+  gap: 8px;
+}
+
+.data-info .hours {
+  font-size: 55px;
+  font-weight: 300;
+}
+
+.data-info .subtitle {
+  color: var(--Pale-Blue);
+}
+
+/* background color cards and img heigh*/
+
+.work img, .play img, .study img {
+  height: 74px;
+  top: -9px;
+}
 
 .work {
   background-color: var(--Light-red-work);
@@ -56,21 +218,95 @@ body {
   background-color: var(--Lime-green);
 }
 
+.exercise img {
+  height: 54px;
+  top: 0;
+}
+
 .social {
   background-color: var(--Violet);
+}
+
+.social img {
+  height: 82px;
+  top: -10px;
 }
 
 .selfCare {
   background-color: var(--Soft-orange);
 }
 
+.selfCare img {
+  height: 62px;
+  top: -10px;
+}
+
 /* footer styles */
-footer {
+.attribution { 
+  font-size: 11px; 
+  text-align: center;
   padding: 20px 0;
+}
+
+.attribution a { 
+  color: var(--Light-red-study); 
 }
 
 /* mobile styles */
 @media (max-width: 375px) {
+  body {
+    height: auto;
+    /* card titles 18px */
+    color: #fff;
+    display: block;
+  }
+
+  .container {
+    display: block;
+    padding: 0 0;
+    height: auto;
+  }
+
+  /* person sytles */
+  .container_person {
+    height: 180px;
+  }
+
+  .container_person-1 {
+    height: 64%;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30px;
+    gap: 20px;
+  }
+
+  .container_person-1 .container_person--photo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+
+  .container_person-1 .container_person--name p:first-child {
+    font-size: 12px;
+  }
+
+  .container_person-1 .container_person--name p:last-child {
+    font-size: 20px;
+  }
+
+  .container_person-options {
+    height: 36%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    padding: 0 18px;
+  }
+
+  .container_person-options span:active {
+    color: #fff;
+  }
+
   /* cards general styles */
   .container_person, .container_info {
     width: 300px;
@@ -86,125 +322,36 @@ footer {
 
   .container_section {
     height: 60px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
   }
 
   .container_section img {
     height: 62px;
-    position: absolute;
     top: -9px;
-    right: 20px;
   }
 
   .container_info--data {
-    background-color: var(--Dark-blue);
-    border-radius: 20px 20px 0 0;
     overflow: hidden;
-    height: 100%;
     position: absolute;
-    width: 100%;
     top: 32px;
-  }
-
-  .data-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .container_info--data:hover {
-    background-color: var(--Desaturated-blue);
-  }
-
-  .data-container .data-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px 4px 20px;
-  }
-
-  .data-header h2 {
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .data-header img:hover {
-    cursor: pointer;
+    padding: 20px 30px;
   }
 
   .data-container .data-info {
     width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px 0 20px;
+    padding: 8px 0 0 0;
+    gap: 0;
   }
 
   .data-info .hours {
     font-size: 32px;
-    font-weight: 300;
   }
 
   .data-info .subtitle {
-    color: var(--Pale-Blue);
-  }
-  
-  /* person sytles */
-  .container_person {
-    background-color: var(--Dark-blue);
-    height: 180px;
+    font-size: 14px;
   }
 
-  .container_person-1 {
-    background-color: var(--Blue);
-    border-radius: 0 0 20px 20px;
-    height: 64%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .container_person-1 .container_person--photo {
-    background-color: #fff;
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-
-  .container_person-1 .container_person--photo img {
-    height: 90%;
-  }
-
-  .container_person-1 .container_person--name p:first-child {
-    color: var(--Pale-Blue);
-    font-size: 12px;
-  }
-
-  .container_person-1 .container_person--name p:last-child {
-    font-weight: 300;
-    font-size: 20px;
-  }
-
-  .container_person-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 36%;
-    color: var(--Pale-Blue);
-  }
-
-  .container_person-options span:active {
-    color: #fff;
-  }
 }
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
