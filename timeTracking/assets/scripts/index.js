@@ -72,5 +72,5 @@ const btnActive = (element) => {
 // Cargar los datos al cargar la página (opcional)
 window.onload = () => {
   mostrarInformacion('daily')
-  btnActive('dailyb')
+  btnActive('daily')
 };
