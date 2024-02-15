@@ -8,3 +8,10 @@
 --> [Code](https://github.com/alexidev23/desafios-Frontend-Mentor/tree/main/RecipePage)
 
 ![Recipe Page](./RecipePage/design/desktop-preview.jpg)
+
+### 2 - Time Tracking
+--> [Page](https://65ce8a1fa30c9b4053a98b94--chimerical-nougat-27dbc0.netlify.app/)
+
+--> [Code](https://github.com/alexidev23/desafios-Frontend-Mentor/tree/main/timeTracking)
+
+![Time Tracking](./timeTracking/design/desktop-preview.jpg)
